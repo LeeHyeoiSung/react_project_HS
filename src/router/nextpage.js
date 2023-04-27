@@ -1,7 +1,7 @@
 import React from "react";
 
-const Nextpage = (User) => {
-    console.log("next", User.ID)
+const Nextpage = (ID) => {
+    console.log("next", ID)
     return(
         <div> name:
         </div>
