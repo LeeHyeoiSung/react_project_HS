@@ -1,16 +1,17 @@
-import React from "react";
+const users = [
+    { ID: "ddd@ddd", Password: "123", name: "Kim" },
+    { ID: "aaa@aaa", Password: "123", name: "Kim" },
+    { ID: "sss@sss", Password: "123", name: "Kim" }
+];
 
-const Users = 
-    { ID: "ddd@ddd", Password: "123", name: "Kim" }
-;
-export function Auth() {
-    const User = Users.find(
-          (User) => User.ID === (온값) && User.Password === (온값)
-
+export function Auth(ID, Password) {
+    const user = users.find(
+          (user) => user.ID === ID && user.Password === Password
         )
-        //if 조건 걸고 실패시 알림창 띄우기
-        return User;
-    };
+        if(user === undefined) alert("등록되지 않은 회원입니다.");
+        return user;      
+};
 
-    //asdasdasdasdasdasdasdasdasd
+
+
 

@@ -1,6 +1,6 @@
 import React, {useState } from "react";
 import styled from 'styled-components';
-import Auth from "../component/auth";
+import { Auth } from "../component/auth";
 
 const Main = styled.div`
     width: 210vh;
@@ -53,23 +53,26 @@ const LoginInput = styled.input`
     background-color: transparent;
     margin: auto;
 `
-function LoginPage() {   
+function LoginPage(login) {   
     const [ID, setID] = useState("");
     const [Password, setPassword] = useState("");
 
     const handleID = (e) => setID(e.target.value);
     const handlePW = (e) => setPassword(e.target.value);
-    const Users = 
-    { ID: "ddd@ddd", Password: "123", name: "Kim" }
-;
+
     const handleSubmit = (e) =>  {
         e.preventDefault()
-        if(Password === Users.Password) {
-            alert("등록된 회원입니다.");
-          } else {
-            alert("등록되지 않은 회원입니다.");
-          } 
-    };
+        try{
+            Auth(ID, Password);
+            console.log("2", ID, Password);
+        }
+        catch(e){
+            setID('');
+            setPassword('');
+            console.log("3", ID, Password);
+        }
+};
+//console.log(Auth);
     return(
         <form >
             <Main>
@@ -80,6 +83,7 @@ function LoginPage() {
                                 name = "id"
                                 value = {ID}
                                 onChange={handleID}
+                                placeholder="ID"
                                 ></LoginInput>
                             </Login1>
                         <Login1 className="Password">
@@ -88,11 +92,13 @@ function LoginPage() {
                                 name = "PW"
                                 value = {Password}
                                 onChange={handlePW}
+                                placeholder="Passsword"
                                 ></LoginInput>
                         </Login1>
-                        <button onClick={handleSubmit}  type="submit"></button>
+                        <button onClick={handleSubmit}  type="submit">로그인</button>        
                     </Login1>
                 </LoginBox>
+                
             </Main>    
         </form>
     )
