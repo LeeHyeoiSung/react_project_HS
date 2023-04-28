@@ -1,6 +1,7 @@
 import React, {useState } from "react";
 import styled from 'styled-components';
-import LoginButton from "../component/loginbutton";
+import Auth from "../component/auth";
+
 const Main = styled.div`
     width: 210vh;
     height: 100vh;
@@ -55,8 +56,9 @@ const LoginInput = styled.input`
 function LoginPage() {   
     const [ID, setID] = useState("");
     const [Password, setPassword] = useState("");
-    const handleID = e => setID(e.target.value);
-    const handlePW = e => setPassword(e.target.value);
+
+    const handleID = (e) => setID(e.target.value);
+    const handlePW = (e) => setPassword(e.target.value);
     const Users = 
     { ID: "ddd@ddd", Password: "123", name: "Kim" }
 ;
