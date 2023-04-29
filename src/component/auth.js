@@ -6,8 +6,7 @@ const users = [
 
 export function Auth(ID, Password) {
     const user = users.find(
-          (user) => user.ID === ID && user.Password === Password
-        )
+          (user) => user.ID === ID && user.Password === Password);
         if(user === undefined) alert("등록되지 않은 회원입니다.");
         return user;      
 };

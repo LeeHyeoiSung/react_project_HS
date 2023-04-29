@@ -7,15 +7,13 @@ import Home from "../router/home";
 import LoginPage from "../router/loginpage";
 
 function Router () {
-  console.log("router1",Auth("ddd@ddd","123"))
-
   const[User , setUser] = useState(null);
-  const login = ({ID,Password}) => setUser(Auth(ID,Password));
-
   const logininfo = User != null;
 
+  const login = 1
+  const logout = () => setUser(null);
 
-  console.log("router2",login)
+  if(logininfo != null) <Link to="/" />
   
     return(
         <BrowserRouter>

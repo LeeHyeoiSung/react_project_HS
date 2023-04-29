@@ -53,7 +53,7 @@ const LoginInput = styled.input`
     background-color: transparent;
     margin: auto;
 `
-function LoginPage(login) {   
+function LoginPage({login}) {   
     const [ID, setID] = useState("");
     const [Password, setPassword] = useState("");
 
@@ -62,8 +62,8 @@ function LoginPage(login) {
 
     const handleSubmit = (e) =>  {
         e.preventDefault()
-        Auth(ID, Password);
-        
+        Auth(ID, Password)
+        console.log(login)
 };
 //console.log(Auth);
     return(
