@@ -12,6 +12,9 @@ function Router () {
   const[User , setUser] = useState(null);
   const login = ({ID,Password}) => setUser(Auth(ID,Password));
 
+  const logininfo = User != null;
+
+
   console.log("router2",login)
   
     return(
@@ -29,5 +32,3 @@ function Router () {
 }
 export default Router;
 
-
-///asdasd

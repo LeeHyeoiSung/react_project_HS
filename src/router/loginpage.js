@@ -62,15 +62,8 @@ function LoginPage(login) {
 
     const handleSubmit = (e) =>  {
         e.preventDefault()
-        try{
-            Auth(ID, Password);
-            console.log("2", ID, Password);
-        }
-        catch(e){
-            setID('');
-            setPassword('');
-            console.log("3", ID, Password);
-        }
+        Auth(ID, Password);
+        
 };
 //console.log(Auth);
     return(
