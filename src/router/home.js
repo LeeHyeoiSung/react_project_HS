@@ -6,7 +6,7 @@ function Home() {
     <main>
       <h1>Home</h1>
       <p>메인화면 입니다</p>
-      <Link to="/Login">
+      <Link to="/login">
         <button>로그인</button>
       </Link>
     </main>

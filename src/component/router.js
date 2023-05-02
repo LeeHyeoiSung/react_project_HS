@@ -9,21 +9,25 @@ import LoginPage from "../router/loginpage";
 function Router () {
   const[User , setUser] = useState(null);
   const logininfo = User != null;
+  console.log(User)
 
-  const login = 1
+  const login = ({ ID, Password }) => setUser(Auth({ ID, Password }));
   const logout = () => setUser(null);
 
   if(logininfo != null) <Link to="/" />
   
     return(
         <BrowserRouter>
-        <Link to="/" />
-        <Link to="/login" />
-        <Link to="/nextpage" />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/login" element={<Nextpage />} />
+          <Route
+            path="/login"
+            render={props => (
+              <LoginPage logininfo={logininfo} login={login} {...props} />
+            )}
+            element={<LoginPage />}
+          />
+          <Route path="/nextpage" element={<Nextpage />} />
         </Routes>
         </BrowserRouter>
     );

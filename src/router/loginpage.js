@@ -2,6 +2,7 @@ import React, {useState } from "react";
 import styled from 'styled-components';
 import { Auth } from "../component/auth";
 
+////////////////////////style component////////////////////////
 const Main = styled.div`
     width: 210vh;
     height: 100vh;
@@ -53,7 +54,9 @@ const LoginInput = styled.input`
     background-color: transparent;
     margin: auto;
 `
-function LoginPage({login}) {   
+
+////////////////////////여기서부터 funtion////////////////////////
+function LoginPage({login, logininfo}) {   
     const [ID, setID] = useState("");
     const [Password, setPassword] = useState("");
 
@@ -63,9 +66,10 @@ function LoginPage({login}) {
     const handleSubmit = (e) =>  {
         e.preventDefault()
         Auth(ID, Password)
+        login({ ID, Password });
+        };
         console.log(login)
-};
-//console.log(Auth);
+
     return(
         <form >
             <Main>
@@ -96,5 +100,4 @@ function LoginPage({login}) {
         </form>
     )
 }
-
 export default LoginPage;
