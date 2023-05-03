@@ -57,6 +57,7 @@ const LoginInput = styled.input`
 
 ////////////////////////여기서부터 funtion////////////////////////
 function LoginPage({login, logininfo}) {   
+    console.log(login, logininfo)
     const [ID, setID] = useState("");
     const [Password, setPassword] = useState("");
 
@@ -65,8 +66,15 @@ function LoginPage({login, logininfo}) {
 
     const handleSubmit = (e) =>  {
         e.preventDefault()
-        Auth(ID, Password)
-        login({ ID, Password });
+//        Auth(ID, Password)
+//        login({ ID, Password });
+try {
+    login({ ID, Password });
+  } catch (e) {
+    alert("Failed to login");
+    setID("");
+    setPassword("");
+  }
         };
         console.log(login)
 
