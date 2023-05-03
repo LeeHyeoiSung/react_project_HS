@@ -12,7 +12,7 @@ function Router () {
   console.log(User)
 
   const login = ({ ID, Password }) => setUser(Auth({ ID, Password }));
-  const logout = () => setUser(null);
+//  const logout = () => setUser(null);
 
   if(logininfo != null) <Link to="/" />
   

@@ -66,15 +66,7 @@ function LoginPage({login, logininfo}) {
 
     const handleSubmit = (e) =>  {
         e.preventDefault()
-//        Auth(ID, Password)
-//        login({ ID, Password });
-try {
-    login({ ID, Password });
-  } catch (e) {
-    alert("Failed to login");
-    setID("");
-    setPassword("");
-  }
+        Auth({ ID, Password });
         };
         console.log(login)
 
