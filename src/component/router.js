@@ -12,8 +12,8 @@ function Router () {
   console.log(User)
 
   const login = ({ ID, Password }) => setUser(Auth({ ID, Password }));
-//  const logout = () => setUser(null);
-
+//임시 보류  const logout = () => setUser(null);
+//
   if(logininfo != null) <Link to="/" />
   
     return(
