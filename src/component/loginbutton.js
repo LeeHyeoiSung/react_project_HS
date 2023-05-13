@@ -1,5 +1,4 @@
 import React from "react";
-import Nextpage from "../router/nextpage"
 import { useNavigate ,Link } from "react-router-dom";
 
 const Users = 
@@ -29,4 +28,4 @@ function LoginButton(User) {
 
 export default LoginButton;
 
-///// 기능보류 /////
+///// 기능보류 ///////////
