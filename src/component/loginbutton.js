@@ -7,6 +7,7 @@ const Users =
 
 function LoginButton(User) {
     const navigate  = useNavigate();
+    console.log(User)
 
     const Buttoncheck = () => {
         console.log("user" , User)
